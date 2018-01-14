@@ -11,8 +11,9 @@ const API_KEY = 'AIzaSyDmUOjne6DVTKDn2v3Uea8Y_cgipFL0I4Y';
 
 class App extends Component {
   constructor(props){
-
-    this.state= { videos: [] };
+    super(props);
+    
+    this.state = { videos: [] };
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
       this.setState({ videos });
       //this.setState({videos: videos});
@@ -23,7 +24,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
-        <VideoList videos={this.state.videos} />
+        <VideoList videos ={this.state.videos} />
         </div>
       );
     }
